@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment4</title>
+    <style>
+        body{
+            background-color: papayawhip;
+        
+        }
+        #box1{
+            background-color: blueviolet;
+            grid-area:box1;
+        }
+        #box2{
+            background-color:cyan;
+            grid-area:box2;
+        }
+        #box3{
+            background-color:brown;
+            grid-area:box3;
+        }
+        #box4{
+            background-color:cadetblue;
+            grid-area:box4;
+        }
+        #box5{
+            background-color:darkolivegreen;
+            grid-area:box5;
+        }
+        #box6{
+            background-color:deeppink;
+            grid-area:box6;
+        }
+        #box7{
+            background-color:deepskyblue;
+            grid-area:box7;
+        }
+        #box8{
+            background-color:gold;
+            grid-area:box8;
+        }
+        #box9{
+            background-color:lightsalmon;
+            grid-area:box9;
+        }
+        .maindiv{
+            display: grid;
+            grid-gap: 10px; 
+            padding-left: 440px;
+            margin: 70px;
+            border-radius: 30px;
+            grid-template-areas: 
+            'box1 box1 box2 box2 box3 box3'
+            'box4 box4 box5 box5 box6 box6'
+            'box7 box7 box8 box8 box9 box9';
+            grid-template-columns:min-content;
+            position: absolute;
+
+            
+
+        }
+        .maindiv >div{
+            /* styles will be applied to all the divs inside the main div */
+            padding: 10px;
+            margin: 20px;
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            background-color: darkgray;
+            box-shadow: black 7px 10px;
+            color: black;
+
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div align="center" >
+        <h2 style="font-family: cursive;">This is my color box</h2>
+        <br>
+        <div class="maindiv">
+                <div id="box1"></div>
+                <div id="box2"></div>
+                <div id="box3"></div>
+                <div id="box4"></div>
+                <div id="box5"></div>
+                <div id="box6"></div>
+                <div id="box7"></div>
+                <div id="box8"></div>
+                <div id="box9"></div>
+        </div>
+            <br>
+            <button onclick="ChangeColor()" style="font-family: cursive;">Change Color</button>
+    </div>
+    <script>
+        function ChangeColor(){
+            var array=[];
+            var i;
+            for (var i = 0; i < 9; i++) {
+                var r = Math.floor(Math.random() * 256);
+                var g = Math.floor(Math.random() * 256);
+                var b = Math.floor(Math.random() * 256);
+                var mycolor = "rgb("+r+","+g+","+b+")";
+                array[i]=mycolor;
+            }
+            // console.log(mycolor);
+            document.getElementById("box1").style.background = array[0];
+            document.getElementById("box2").style.background = array[1];
+            document.getElementById("box3").style.background = array[2];
+            document.getElementById("box4").style.background = array[3];
+            document.getElementById("box5").style.background = array[4];
+            document.getElementById("box6").style.background = array[5];
+            document.getElementById("box7").style.background = array[6];
+            document.getElementById("box8").style.background = array[7];
+            document.getElementById("box9").style.background = array[8];
+
+            // document.getElementsByClassName("maindiv").style.background= mycolor;
+        }
+
+        </script>
+</body>
+</html>
